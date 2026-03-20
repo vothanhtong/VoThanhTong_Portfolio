@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
+    margin-top: 32px;
 }
 
 .skills__grid_container {
@@ -9,6 +10,11 @@
     grid-template-columns: repeat(3, minmax(100px, 1fr));
     grid-template-rows: repeat(2, minmax(320px, auto));
     gap: 12px;
+}
+
+.skills__grid_item_header div img {
+    width: 60px;
+    height: auto;
 }
 
 .skills__grid_item_header {
@@ -41,7 +47,7 @@
 
     &:nth-child(1) {
         border: none;
-        background: url("../../assets/cat1.jpeg") center / cover no-repeat;
+        background: url("../../assets/Let's Code.jpeg") center / cover no-repeat;
     }
 
     &:nth-child(2) {
@@ -113,105 +119,67 @@
         gap: 1rem;
         justify-content: space-between;
 
-        & .softSkills__container {
-            position: relative;
-            flex: 1;
-            display: flex;
-            flex-wrap: wrap;
+        .softSkills__container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             justify-content: center;
-            align-content: center;
-            gap: 8px;
-            margin-top: 8px;
+            gap: 15px;
         }
 
-        & .softSkills_badge {
-            height: 36px;
-            width: 244px;
+        .softSkills_badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 8px 16px;
             border: 1px solid var(--p-100);
             border-radius: 24px;
             background-color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: var(--caption-font-size);
             font-weight: 600;
-            text-transform: capitalize;
-            position: absolute;
+            white-space: normal;
+            /* 🔥 fix bể */
+            text-align: center;
+        }
 
-            & p {
-                background: var(--main-gradient-color);
-                color: transparent;
-                background-clip: text;
-            }
+        /* Thêm icon check vào bên trái mỗi badge */
+        & .softSkills_badge::before {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url("../../assets/check-icon.svg") center / contain no-repeat;
+            /* Nếu đường dẫn check-icon.svg khác, sửa lại cho đúng */
+        }
 
-            &:nth-child(1) {
-                top: 20%;
-                left: 10%;
-                transform: rotate(-2deg);
-            }
-
-            &:nth-child(2) {
-                bottom: 10%;
-                left: 20%;
-                transform: rotate(2deg);
-            }
-
-            &:nth-child(3) {
-                top: 25%;
-                right: 20%;
-                transform: rotate(-2deg);
-            }
-
-            &:nth-child(4) {
-                bottom: 10%;
-                right: 5%;
-                transform: rotate(2deg);
-            }
+        & .softSkills_badge p {
+            background: var(--main-gradient-color);
+            color: transparent;
+            background-clip: text;
+            margin: 0;
         }
 
         & .softSkills__book_icons {
-            position: relative;
-            height: 100%;
-            width: 100%;
+            grid-column: span 2;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
 
-            & img {
-                height: 40px;
-                width: 40px;
-                position: absolute;
-
-                &:nth-child(1) {
-                    top: 20px;
-                    left: 50px;
-                    transform: scaleX(-1) translateY(5px);
-                }
-
-                &:nth-child(2) {
-                    top: 40%;
-                    left: 45%;
-                    transform: rotate(120deg);
-                }
-
-                &:nth-child(3) {
-                    top: 10%;
-                    right: 20%;
-                }
-
-                &:nth-child(4) {
-                    bottom: 20%;
-                    right: 5%;
-                    transform: scaleX(-1);
-                    transform: rotate(-40deg);
-                }
-            }
+        & .softSkills__book_icons img {
+            height: 40px;
+            width: 40px;
+            position: static;
+            transform: none;
         }
     }
 
     &:nth-child(4) {
-        background: url("../../assets/cat3.jpeg") center / cover no-repeat;
+        background: url("../../assets/anh1.jpeg") center / cover no-repeat;
         border: none;
 
         &:hover {
-            background-image: url("../../assets/cat2.jpeg");
+            background-image: url("../../assets/anh2.jpeg");
         }
     }
 }

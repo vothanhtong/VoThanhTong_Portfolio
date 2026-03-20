@@ -76,7 +76,7 @@ header {
         0 4px 6px -1px hsla(0, 0%, 0%, 0.2),
         0 2px 4px -2px hsla(0, 0%, 0%, 0.2),
         inset 0px 1px 3px hsla(0, 0%, 0%, 0.1);
-    background-image: url('../../assets/avatar.jpg');
+    background-image: url('../../assets/avatar.jpeg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
