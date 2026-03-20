@@ -1,0 +1,185 @@
+.skills__container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 32px;
+}
+
+.skills__grid_container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-template-rows: repeat(2, minmax(320px, auto));
+    gap: 12px;
+}
+
+.skills__grid_item_header div img {
+    width: 60px;
+    height: auto;
+}
+
+.skills__grid_item_header {
+    & div {
+        display: flex;
+        gap: 12px;
+    }
+
+    & h2 {
+        font-size: var(--h2-font-size);
+        line-height: var(--h2-line-height);
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+
+    & p {
+        margin-top: 12px;
+        color: var(--n--500);
+        max-width: 60ch;
+    }
+}
+
+.skills__grid_item {
+    overflow: hidden;
+    border: 2px solid var(--p-100);
+    border-radius: 24px;
+    background-color: var(--p-20);
+    padding: 2rem 2rem;
+    box-shadow: 0px 2px 4px hsla(233, 45%, 20%, 0.1);
+
+    &:nth-child(1) {
+        border: none;
+        background: url("../../assets/Let's Code.jpeg") center / cover no-repeat;
+    }
+
+    &:nth-child(2) {
+        grid-column: span 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & .icons-list-wrapper {
+            overflow: hidden;
+            margin-top: 8px;
+            display: flex;
+            gap: 12px;
+
+            &:nth-child(1)>.icons-list {
+                animation: move-left 30s linear infinite;
+            }
+
+            &:nth-child(2)>.icons-list {
+                animation: move-right 60s linear infinite;
+            }
+        }
+
+        & .icons-list {
+            display: flex;
+            min-width: 100%;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        & .icon-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.14em;
+            border-radius: 12px;
+            padding: 0.6em 0;
+            width: 12em;
+            font-weight: 700;
+            font-size: var(--caption-font-size);
+            text-transform: uppercase;
+
+            & img {
+                height: 2em;
+            }
+        }
+
+        & .icon-badges:nth-child(even) {
+            background: var(--main-gradient-color);
+            color: white;
+        }
+
+        & .icon-badges:nth-child(odd) {
+            background: white;
+            border: 1px solid var(--p-100);
+
+            & span {
+                background: var(--main-gradient-color);
+                color: transparent;
+                background-clip: text;
+            }
+        }
+    }
+
+    &:nth-child(3) {
+        grid-column: span 2;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: space-between;
+
+        .softSkills__container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .softSkills_badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border: 1px solid var(--p-100);
+            border-radius: 24px;
+            background-color: white;
+            font-weight: 600;
+            white-space: normal;
+            /* 🔥 fix bể */
+            text-align: center;
+        }
+
+        /* Thêm icon check vào bên trái mỗi badge */
+        & .softSkills_badge::before {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url("../../assets/check-icon.svg") center / contain no-repeat;
+            /* Nếu đường dẫn check-icon.svg khác, sửa lại cho đúng */
+        }
+
+        & .softSkills_badge p {
+            background: var(--main-gradient-color);
+            color: transparent;
+            background-clip: text;
+            margin: 0;
+        }
+
+        & .softSkills__book_icons {
+            grid-column: span 2;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        & .softSkills__book_icons img {
+            height: 40px;
+            width: 40px;
+            position: static;
+            transform: none;
+        }
+    }
+
+    &:nth-child(4) {
+        background: url("../../assets/anh1.jpeg") center / cover no-repeat;
+        border: none;
+
+        &:hover {
+            background-image: url("../../assets/anh2.jpeg");
+        }
+    }
+}
