@@ -40,10 +40,10 @@ section {
 	margin-bottom: 120px;
 }
 
-.container {
+container {
 	margin: 0 auto;
-	max-width: 1536px;
-	padding: 0 2rem;
+	max-width: 1450px;
+	padding: 0 16px;
 }
 
 .section__header {
