@@ -50,7 +50,7 @@ header {
         padding: 4px 12px;
         background-color: var(--p-50);
         border-radius: 4px;
-        /* line-clamp */
+        /* line-clamp giới hạn số dòng hiển thị */
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 1;
