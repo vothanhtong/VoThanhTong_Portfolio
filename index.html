@@ -3,14 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Võ Thanh Tòng Portfolio</title>
 
-    <link rel="stylesheet" href="css/main.css" />
+    <!-- ✅ SEO Primary -->
+    <title>Võ Thanh Tòng — Lập Trình Viên Web & Giáo Viên Lập Trình</title>
+    <meta name="description" content="Portfolio của Võ Thanh Tòng — sinh viên Hệ thống thông tin quản lý, đam mê lập trình web với React, Next.js, Node.js. Tìm kiếm cơ hội Developer và Giáo viên Lập trình." />
+    <meta name="keywords" content="Võ Thanh Tòng, lập trình viên web, React, NextJS, Node.js, portfolio, developer, giáo viên lập trình" />
+    <meta name="author" content="Võ Thanh Tòng" />
+    <meta name="robots" content="index, follow" />
 
-    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- ✅ Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Võ Thanh Tòng — Lập Trình Viên Web" />
+    <meta property="og:description" content="Portfolio của Võ Thanh Tòng — React, Next.js, Node.js developer & Giáo viên Lập trình." />
+    <meta property="og:image" content="./assets/avatar.jpeg" />
+    <meta property="og:locale" content="vi_VN" />
 
+    <!-- ✅ Favicon -->
     <link rel="icon" href="./assets/rocket-icon.ico" />
 
+    <!-- ✅ CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- ✅ Fonts — preconnect trước, load sau -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,25 +34,29 @@
     />
   </head>
   <body>
-    <!--------------- 
-      Header
-    ----------------->
-    <header>
+    <!-- Phông nền Canvas chạy ngầm -->
+    <canvas id="plexusCanvas"></canvas>
+    <!-- =============== Header =============== -->
+    <header role="banner">
       <div class="container header__container">
         <!-- left column -->
         <div class="header__column--left">
-          <!-- avatar -->
-          <div class="header__img"></div>
+          <!-- avatar — above fold, không lazy load -->
+          <div
+            class="header__img"
+            role="img"
+            aria-label="Ảnh đại diện của Võ Thanh Tòng"
+          ></div>
 
           <div class="header__content--left">
             <h2 class="header__title">Võ Thanh Tòng</h2>
-            <div class="header__badge_container">
+            <div class="header__badge_container" aria-label="Vai trò">
               <div class="badge">Lập trình web</div>
               <div class="badge">Giáo viên Scratch, Python</div>
             </div>
             <p>
-              Mong muốn ứng tuyển vị trí <span>Junior Developer</span> trong
-              lĩnh vực phát triển web và Giáo viên Lập rình.
+              Mong muốn ứng tuyển vị trí <span>Developer</span> trong
+              lĩnh vực phát triển web và Giáo viên Lập trình.
             </p>
           </div>
         </div>
@@ -47,13 +66,16 @@
           <h2 class="header__title">Thông Tin Liên Hệ</h2>
           <p>
             Gửi email cho mình tại:
-            <span>vothanhtong9295@gmail.com</span>
+            <a href="mailto:vothanhtong9295@gmail.com" class="contact-link">
+              <span>vothanhtong9295@gmail.com</span>
+            </a>
           </p>
           <p>
             Gọi cho mình tại:
-            <span>0917772494</span>
+            <a href="tel:+84917772494" class="contact-link">
+              <span>0917772494</span>
+            </a>
           </p>
-          <!-- Thêm GitHub (dạng link) -->
           <p>
             GitHub của mình là:
             <a
@@ -61,6 +83,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="github-link"
+              aria-label="GitHub của Võ Thanh Tòng"
             >
               vothanhtong
             </a>
@@ -69,507 +92,453 @@
       </div>
     </header>
 
-    <!--------------------------------- 
-      About Me - Giới Thiệu Bản Thân
-    ----------------------------------->
-    <section class="aboutMe__section">
-      <!-- Hình động 2 bên -->
-      <img src="./assets/rocket-icon.svg" alt="rocket icon" />
+    <!-- =============== Main Content =============== -->
+    <main role="main">
 
-      <img src="./assets/laptop-icon.svg" alt="laptop icon" />
+      <!-- ======= About Me ======= -->
+      <section class="aboutMe__section reveal-section" aria-labelledby="about-title">
+        <!-- Hình động 2 bên -->
+        <img
+          src="./assets/rocket-icon.svg"
+          alt=""
+          role="presentation"
+          loading="lazy"
+          decoding="async"
+        />
+        <img
+          src="./assets/laptop-icon.svg"
+          alt=""
+          role="presentation"
+          loading="lazy"
+          decoding="async"
+        />
 
-      <!-- Nội dung chính -->
-      <div class="aboutMe__container">
-        <div class="aboutMe__content_container">
-          <h1 class="section__title">Giới Thiệu Bản Thân</h1>
+        <!-- Nội dung chính -->
+        <div class="aboutMe__container">
+          <div class="aboutMe__content_container">
+            <!-- ✅ Chỉ 1 h1 trên toàn trang -->
+            <h1 id="about-title" class="section__title">Giới Thiệu Bản Thân</h1>
 
-          <p class="section__description">
-            Xin chào! Mình là một sinh viên năm cuối tại Đại học Nha Trang, theo
-            học chuyên ngành Hệ thống thông tin quản lý. Với niềm đam mê sâu sắc
-            dành cho lập trình hệ thống và thiết kế web, mình không ngừng học
-            hỏi để tạo ra những trang web vừa hiện đại, vừa giải quyết được
-            những bài toán thực tiễn. Mình mong muốn được thử sức trong môi
-            trường chuyên nghiệp, nơi mình có thể đóng góp và phát triển bản
-            thân.
-          </p>
+            <p class="section__description">
+              Xin chào! Mình là sinh viên tại trường Đại học Nha Trang, theo
+              học chuyên ngành Hệ thống thông tin quản lý. Với niềm đam mê sâu sắc
+              dành cho lập trình hệ thống và thiết kế web, mình không ngừng học
+              hỏi để tạo ra những trang web vừa hiện đại, vừa giải quyết được
+              những bài toán thực tiễn. Mình mong muốn được thử sức trong môi
+              trường chuyên nghiệp, nơi mình có thể đóng góp và phát triển bản
+              thân.
+            </p>
 
-          <div class="CTA">
+            <div class="CTA">
+              <a
+                href="./assets/VoThanhTong-TopCV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="primaryButton"
+                download
+                aria-label="Tải xuống CV của Võ Thanh Tòng"
+              >Tải CV</a>
+
+              <a href="#ProjectContainer" class="outlineButton">Xem Dự Án</a>
+              <a href="certificates.html" class="outlineButton">Xem Chứng Chỉ</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= Skills ======= -->
+      <section class="skills__section reveal-section" aria-labelledby="skills-title">
+        <div class="container skills__container">
+          <div class="section__header">
+            <h2 id="skills-title" class="section__title">Kỹ năng và Chuyên môn</h2>
+            <p class="section__description">
+              Là một nhà phát triển web mới vào nghề với nền tảng vững chắc về
+              React, NextJS và Node.js, mình cũng có kinh nghiệm giảng dạy Scratch
+              và Python cho các bạn nhỏ. Với sự kết hợp giữa kỹ năng kỹ thuật và
+              khả năng truyền đạt, mình tin rằng mình có thể mang đến giá trị cho
+              các dự án và tổ chức mà mình tham gia.
+            </p>
+          </div>
+
+          <div class="skills__grid_container">
+            <!-- grid item 1 (empty spacer) -->
+            <div class="skills__grid_item" aria-hidden="true"></div>
+
+            <!-- grid item 2 — Công cụ & Công nghệ -->
+            <div class="skills__grid_item">
+              <div class="skills__grid_item_header">
+                <div>
+                  <img
+                    src="./assets/graduation-cap-icon.svg"
+                    alt=""
+                    role="presentation"
+                    loading="lazy"
+                    decoding="async"
+                    width="40"
+                    height="40"
+                  />
+                  <h3>Công cụ và Công nghệ</h3>
+                </div>
+                <p>
+                  Thành thạo nhiều công cụ lập trình web hiện đại, có kinh nghiệm
+                  xây dựng các ứng dụng web tương tác, thân thiện với người dùng
+                  và đam mê viết mã sạch, dễ bảo trì.
+                </p>
+              </div>
+
+              <!-- skill logos -->
+              <div>
+                <!-- list 1 -->
+                <div class="icons-list-wrapper" aria-label="Danh sách kỹ năng lập trình">
+                  <div class="icons-list">
+                    <div class="icon-badges"><img src="./assets/icons/C.svg" alt="C" loading="lazy" /><span>C</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/github.svg" alt="GitHub" loading="lazy" /><span>GitHub</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/css.svg" alt="CSS" loading="lazy" /><span>CSS</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/java.svg" alt="Java" loading="lazy" /><span>Java</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/html.svg" alt="HTML" loading="lazy" /><span>HTML</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/node-js.svg" alt="Node.js" loading="lazy" /><span>Node.js</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/JS.svg" alt="JavaScript" loading="lazy" /><span>JS</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/react.svg" alt="React" loading="lazy" /><span>React</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/postgresql.svg" alt="PostgreSQL" loading="lazy" /><span>PostgreSQL</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/nextjs.svg" alt="Next.js" loading="lazy" /><span>Next.js</span></div>
+                  </div>
+                  <div class="icons-list" aria-hidden="true">
+                    <div class="icon-badges"><img src="./assets/icons/C.svg" alt="" loading="lazy" /><span>C</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/github.svg" alt="" loading="lazy" /><span>GitHub</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/css.svg" alt="" loading="lazy" /><span>CSS</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/java.svg" alt="" loading="lazy" /><span>Java</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/html.svg" alt="" loading="lazy" /><span>HTML</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/node-js.svg" alt="" loading="lazy" /><span>Node.js</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/JS.svg" alt="" loading="lazy" /><span>JS</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/react.svg" alt="" loading="lazy" /><span>React</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/postgresql.svg" alt="" loading="lazy" /><span>PostgreSQL</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/nextjs.svg" alt="" loading="lazy" /><span>Next.js</span></div>
+                  </div>
+                </div>
+
+                <!-- list 2 -->
+                <div class="icons-list-wrapper" aria-hidden="true">
+                  <div class="icons-list">
+                    <div class="icon-badges"><img src="./assets/icons/C.svg" alt="" loading="lazy" /><span>C</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/github.svg" alt="" loading="lazy" /><span>GitHub</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/css.svg" alt="" loading="lazy" /><span>CSS</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/java.svg" alt="" loading="lazy" /><span>Java</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/html.svg" alt="" loading="lazy" /><span>HTML</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/node-js.svg" alt="" loading="lazy" /><span>Node.js</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/JS.svg" alt="" loading="lazy" /><span>JS</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/react.svg" alt="" loading="lazy" /><span>React</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/postgresql.svg" alt="" loading="lazy" /><span>PostgreSQL</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/nextjs.svg" alt="" loading="lazy" /><span>Next.js</span></div>
+                  </div>
+                  <div class="icons-list" aria-hidden="true">
+                    <div class="icon-badges"><img src="./assets/icons/C.svg" alt="" loading="lazy" /><span>C</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/github.svg" alt="" loading="lazy" /><span>GitHub</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/css.svg" alt="" loading="lazy" /><span>CSS</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/java.svg" alt="" loading="lazy" /><span>Java</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/html.svg" alt="" loading="lazy" /><span>HTML</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/node-js.svg" alt="" loading="lazy" /><span>Node.js</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/JS.svg" alt="" loading="lazy" /><span>JS</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/react.svg" alt="" loading="lazy" /><span>React</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/postgresql.svg" alt="" loading="lazy" /><span>PostgreSQL</span></div>
+                    <div class="icon-badges"><img src="./assets/icons/nextjs.svg" alt="" loading="lazy" /><span>Next.js</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- grid item 3 — Kỹ Năng Mềm -->
+            <div class="skills__grid_item">
+              <div class="skills__grid_item_header">
+                <div>
+                  <img
+                    src="./assets/closed-book.svg"
+                    alt=""
+                    role="presentation"
+                    loading="lazy"
+                    decoding="async"
+                    width="40"
+                    height="40"
+                  />
+                  <h3>Kỹ Năng Mềm</h3>
+                </div>
+                <p>
+                  Kỹ năng giao tiếp, cộng tác, và giải quyết vấn đề, với thái độ
+                  chủ động và ham học hỏi, dễ dàng thích nghi trong môi trường làm
+                  việc nhóm năng động.
+                </p>
+              </div>
+
+              <div class="softSkills__container" role="list" aria-label="Kỹ năng mềm">
+                <div class="softSkills_badge" role="listitem">Kỹ năng Giao tiếp</div>
+                <div class="softSkills_badge" role="listitem">Quản lý thời gian</div>
+                <div class="softSkills_badge" role="listitem">Trách nhiệm</div>
+                <div class="softSkills_badge" role="listitem">Ham học hỏi</div>
+                <div class="softSkills_badge" role="listitem">Thể thao</div>
+                <div class="softSkills_badge" role="listitem">Tin học văn phòng</div>
+              </div>
+            </div>
+
+            <!-- grid item 4 (empty spacer) -->
+            <div class="skills__grid_item" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======= Projects ======= -->
+      <section class="projects__section reveal-section" id="ProjectContainer" aria-labelledby="projects-title">
+        <div class="container projects_container">
+          <div class="section__header">
+            <h2 id="projects-title" class="section__title">Đồ Án Thực Chiến</h2>
+            <p class="section__description">
+              Bộ sưu tập dự án thực tập tại trường giúp mình củng cố và hoàn thiện
+              kỹ năng kỹ thuật cũng như khả năng giải quyết vấn đề một cách sáng tạo.
+            </p>
+          </div>
+
+          <div class="projects__cards_container">
             <a
-              href="./assets/VoThanhTong-TopCV.pdf"
+              href="https://github.com/vothanhtong/TODOX"
               target="_blank"
               rel="noopener noreferrer"
-              class="primaryButton"
-              download
-              >Tải CV</a
+              aria-label="Xem dự án Todolist trên GitHub"
             >
+              <div class="projects_cards">
+                <div class="projects__cards_wrapper">
+                  <img
+                    src="./assets/project1.jpg"
+                    alt="Màn hình ứng dụng Todolist"
+                    class="projects__cards_img"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="projects__cards_titles">
+                  <h4>Dự Án 1</h4>
+                  <h3>Todolist</h3>
+                </div>
+              </div>
+            </a>
 
-            <a href="#ProjectContainer" class="outlineButton">Xem Dự Án</a>
+            <a
+              href="https://github.com/vothanhtong/Login"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Xem dự án Login trên GitHub"
+            >
+              <div class="projects_cards">
+                <div class="projects__cards_wrapper">
+                  <img
+                    src="./assets/project2.jpg"
+                    alt="Màn hình trang đăng nhập"
+                    class="projects__cards_img"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="projects__cards_titles">
+                  <h4>Dự Án 2</h4>
+                  <h3>Login</h3>
+                </div>
+              </div>
+            </a>
+
+            <a
+              href="https://github.com/vothanhtong/Hotel-booking"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Xem dự án Hotel Booking trên GitHub"
+            >
+              <div class="projects_cards">
+                <div class="projects__cards_wrapper">
+                  <img
+                    src="./assets/project3.jpg"
+                    alt="Màn hình ứng dụng đặt phòng khách sạn"
+                    class="projects__cards_img"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="projects__cards_titles">
+                  <h4>Dự Án 3</h4>
+                  <h3>Hotel-booking</h3>
+                </div>
+              </div>
+            </a>
+
+            <a
+              href="https://github.com/vothanhtong/Realtime_Chat_Application"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Xem dự án Realtime Chat trên GitHub"
+            >
+              <div class="projects_cards">
+                <div class="projects__cards_wrapper">
+                  <img
+                    src="./assets/project4.jpg"
+                    alt="Màn hình ứng dụng chat thời gian thực"
+                    class="projects__cards_img"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="projects__cards_titles">
+                  <h4>Dự Án 4</h4>
+                  <h3>Realtime Chat Application</h3>
+                </div>
+              </div>
+            </a>
+
+            <a
+              href="https://github.com/vothanhtong/Quan-ly-thoi-khoa-bieu"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Xem dự án Quản Lý Thời Khóa Biểu trên GitHub"
+            >
+              <div class="projects_cards">
+                <div class="projects__cards_wrapper">
+                  <img
+                    src="./assets/project5.jpg"
+                    alt="Màn hình ứng dụng quản lý thời khóa biểu"
+                    class="projects__cards_img"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="projects__cards_titles">
+                  <h4>Dự Án 5</h4>
+                  <h3>Quản Lý Thời Khóa Biểu</h3>
+                </div>
+              </div>
+            </a>
+
+            <a
+              href="https://github.com/vothanhtong/SQL"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Xem dự án SQL trên GitHub"
+            >
+              <div class="projects_cards">
+                <div class="projects__cards_wrapper">
+                  <img
+                    src="./assets/project6.jpg"
+                    alt="Màn hình dự án SQL"
+                    class="projects__cards_img"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="projects__cards_titles">
+                  <h4>Dự Án 6</h4>
+                  <h3>SQL</h3>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!--------------------------------- 
-      Skills - Kỹ Năng
-    ----------------------------------->
-    <section class="skills__section">
-      <div class="container skills__container">
-        <!-- header -->
-        <div class="section__header">
-          <h1 class="section__title">Kỹ năng và Chuyên môn</h1>
-
-          <p class="section__description">
-            Là một nhà phát triển web mới vào nghề với nền tảng vững chắc về
-            React, NextJS và Node.js, mình cũng có 1,5 năm kinh nghiệm giảng dạy
-            Scratch và Python cho các bạn trẻ. Với sự kết hợp giữa kỹ năng kỹ
-            thuật và khả năng truyền đạt, mình tự tin
-          </p>
-        </div>
-
-        <!-- grid -->
-        <div class="skills__grid_container">
-          <!-- grid item 1 -->
-          <div class="skills__grid_item"></div>
-
-          <!-- grid item 2 -->
-          <div class="skills__grid_item">
-            <div class="skills__grid_item_header">
-              <div>
-                <img
-                  src="./assets/graduation-cap-icon.svg"
-                  alt="graduation cap icon"
-                />
-                <h2>Công cụ và Công nghệ</h2>
-              </div>
-              <p>
-                Thành thạo nhiều công cụ lập trình web hiện đại, có kinh nghiệm
-                xây dựng các ứng dụng web tương tác, thân thiện với người dùng
-                và đam mê viết mã sạch, dễ bảo trì.
-              </p>
-            </div>
-
-            <!-- skill logos -->
-            <div>
-              <!-- list 1 -->
-              <div class="icons-list-wrapper">
-                <div class="icons-list">
-                  <div class="icon-badges">
-                    <img src="./assets/icons/C.svg" alt="C icon" />
-                    <span>C</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img src="./assets/icons/github.svg" alt="github icon" />
-                    <span>github</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img src="./assets/icons/css.svg" alt="CSS icon" />
-                    <span>CSS</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/java.svg" alt="java icon" />
-                    <span>java</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/html.svg" alt="html icon" />
-                    <span>html</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/node-js.svg" alt="nodejs icon" />
-                    <span>node js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/JS.svg" alt="js icon" />
-                    <span>js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/react.svg" alt="react icon" />
-                    <span>react</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/postgresql.svg"
-                      alt="postgresql icon"
-                    />
-                    <span>postgresql</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img src="./assets/icons/nextjs.svg" alt="nextjs icon" />
-                    <span>nextjs</span>
-                  </div>
-                </div>
-
-                <div class="icons-list">
-                  <div class="icon-badges">
-                    <img src="./assets/icons/C.svg" alt="C icon" />
-                    <span>c</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img src="./assets/icons/github.svg" alt="github icon" />
-                    <span>github</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img src="./assets/icons/css.svg" alt="CSS icon" />
-                    <span>CSS</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/java.svg" alt="java icon" />
-                    <span>java</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/html.svg" alt="html icon" />
-                    <span>html</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/node-js.svg" alt="nodejs icon" />
-                    <span>node js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/JS.svg" alt="js icon" />
-                    <span>js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/react.svg" alt="react icon" />
-                    <span>react</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/postgresql.svg"
-                      alt="postgresql icon"
-                    />
-                    <span>postgresql</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img src="./assets/icons/nextjs.svg" alt="nextjs icon" />
-                    <span>nextjs</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- list 2 -->
-              <div class="icons-list-wrapper">
-                <div class="icons-list">
-                  <div class="icon-badges">
-                    <img src="./assets/icons/C.svg" alt="C icon" />
-                    <span>C</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img src="./assets/icons/github.svg" alt="github icon" />
-                    <span>github</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img src="./assets/icons/css.svg" alt="CSS icon" />
-                    <span>CSS</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/java.svg" alt="java icon" />
-                    <span>java</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/html.svg" alt="html icon" />
-                    <span>html</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/node-js.svg" alt="nodejs icon" />
-                    <span>node js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/JS.svg" alt="js icon" />
-                    <span>js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/react.svg" alt="react icon" />
-                    <span>react</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/postgresql.svg"
-                      alt="postgresql icon"
-                    />
-                    <span>postgresql</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img src="./assets/icons/nextjs.svg" alt="nextjs icon" />
-                    <span>nextjs</span>
-                  </div>
-                </div>
-
-                <div class="icons-list">
-                  <div class="icon-badges">
-                    <img src="./assets/icons/C.svg" alt="C icon" />
-                    <span>C</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img src="./assets/icons/github.svg" alt="github icon" />
-                    <span>github</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img src="./assets/icons/css.svg" alt="CSS icon" />
-                    <span>CSS</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/java.svg" alt="java icon" />
-                    <span>java</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/html.svg" alt="html icon" />
-                    <span>html</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/node-js.svg" alt="nodejs icon" />
-                    <span>node js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/JS.svg" alt="js icon" />
-                    <span>js</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img src="./assets/icons/react.svg" alt="react icon" />
-                    <span>react</span>
-                  </div>
-
-                  <div class="icon-badges">
-                    <img
-                      src="./assets/icons/postgresql.svg"
-                      alt="postgresql icon"
-                    />
-                    <span>postgresql</span>
-                  </div>
-                  <div class="icon-badges">
-                    <img src="./assets/icons/nextjs.svg" alt="nextjs icon" />
-                    <span>nextjs</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <!-- ======= Chứng Chỉ ======= -->
+      <section class="certificates__section reveal-section" aria-labelledby="certs-title">
+        <div class="container certificates_container">
+          <div class="section__header">
+            <h2 id="certs-title" class="section__title">Chứng Chỉ Và Bằng Cấp</h2>
+            <p class="section__description">
+              Những chứng chỉ chuyên môn đã đạt được trong quá trình học tập,
+              nghiên cứu và rèn luyện.
+            </p>
           </div>
 
-          <!-- grid item 3 -->
-          <div class="skills__grid_item">
-            <div class="skills__grid_item_header">
-              <div>
-                <img src="./assets/closed-book.svg" alt="close book" />
-                <h2>Kỹ Năng Mềm</h2>
+          <div class="certificates__cards_grid" role="list">
+            <!-- Card 1: LPIC-1 -->
+            <article class="home-cert-card" role="listitem">
+              <div class="home-cert-badge">Linux</div>
+              <div class="home-cert-thumb">
+                <img
+                  src="assets/imageLPIC1.jpg"
+                  alt="Chứng chỉ LPIC-1: Linux Administrator"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <p>
-                Kỹ năng giao tiếp, cộng tác, và giải quyết vấn đề, với thái độ
-                chủ động và ham học hỏi, dễ dàng thích nghi trong môi trường làm
-                việc nhóm năng động.
-              </p>
-            </div>
+              <h3>LPIC-1: Linux Administrator</h3>
+              <p>Linux Professional Institute (LPI)</p>
+              <a href="assets/LPIC-1.pdf" target="_blank" class="home-cert-link" aria-label="Mở PDF chứng chỉ LPIC-1">Mở File PDF →</a>
+            </article>
 
-            <div class="softSkills__container">
-              <div class="softSkills_badge">Kỹ năng Giao tiếp</div>
-              <div class="softSkills_badge">Quản lý thời gian</div>
-              <div class="softSkills_badge">Trách nhiệm</div>
-              <div class="softSkills_badge">Ham học hỏi</div>
-              <div class="softSkills_badge">Thể thao</div>
-              <div class="softSkills_badge">Tin học văn phòng</div>
-            </div>
+            <!-- Card 2: LPIC-2 -->
+            <article class="home-cert-card" role="listitem">
+              <div class="home-cert-badge">Linux</div>
+              <div class="home-cert-thumb">
+                <img
+                  src="assets/imageLPIC2.jpg"
+                  alt="Chứng chỉ LPIC-2: Linux Engineer"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3>LPIC-2: Linux Engineer</h3>
+              <p>Linux Professional Institute (LPI)</p>
+              <a href="assets/LPIC-2.pdf" target="_blank" class="home-cert-link" aria-label="Mở PDF chứng chỉ LPIC-2">Mở File PDF →</a>
+            </article>
+
+            <!-- Card 3: Network -->
+            <article class="home-cert-card" role="listitem">
+              <div class="home-cert-badge">Hạ tầng mạng</div>
+              <div class="home-cert-thumb">
+                <img
+                  src="assets/protect-networks.webp"
+                  alt="Chứng chỉ Quản trị Hạ tầng Mạng Doanh nghiệp"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3>Enterprise Network Management</h3>
+              <p>Quản trị Hạ tầng Mạng Doanh nghiệp</p>
+              <a href="assets/VO THANH TONG.pdf" target="_blank" class="home-cert-link" aria-label="Mở PDF chứng chỉ Enterprise Network">Mở File PDF →</a>
+            </article>
+
+            <!-- Card 4: Excel -->
+            <article class="home-cert-card" role="listitem">
+              <div class="home-cert-badge">Tin học VP</div>
+              <div class="home-cert-thumb">
+                <img
+                  src="assets/Excel.png"
+                  alt="Chứng chỉ Tin học văn phòng Excel"
+                  loading="lazy"
+                  decoding="async"
+                  style="object-fit: contain; padding: 10px;"
+                />
+              </div>
+              <h3>Tin Học Văn Phòng - Excel Nâng Cao</h3>
+              <p>Xử lý dữ liệu, Pivot Table &amp; Dashboard</p>
+              <a href="assets/MOS 2019.pdf" target="_blank" class="home-cert-link" aria-label="Mở PDF chứng chỉ Excel MOS 2019">Mở File PDF →</a>
+            </article>
           </div>
 
-          <!-- grid item 4 -->
-          <div class="skills__grid_item"></div>
+          <div class="certificates__view_all">
+            <a href="certificates.html" class="primaryButton cert-all-btn" aria-label="Xem chi tiết tất cả chứng chỉ">
+              Xem Chi Tiết Chứng Chỉ →
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!--------------------------------- 
-      Projects - Dự Án
-    ----------------------------------->
-    <section class="projects__section" id="ProjectContainer">
-      <div class="container projects_container">
-        <div class="section__header">
-          <h1 class="section__title">Đồ Án Thực Chiến</h1>
-          <p class="section__description">
-            Bộ sưu tập dự án thực tập tại trường giúp mình củng cố và hoàn thiện
-            kỹ năng kỹ thuật cũng như khả năng giải quyết vấn đề một cách sáng
-            tạo.
-          </p>
-        </div>
+    </main>
 
-        <div class="projects__cards_container">
-          <a
-            href="https://github.com/vothanhtong/TODOX"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="projects_cards">
-              <div class="projects__cards_wrapper">
-                <img
-                  src="./assets/project1.jpg"
-                  alt="Login Project"
-                  class="projects__cards_img"
-                />
-              </div>
-              <div class="projects__cards_titles">
-                <h4>Dự Án 1</h4>
-                <h3>Todolist</h3>
-              </div>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/vothanhtong/Login"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="projects_cards">
-              <div class="projects__cards_wrapper">
-                <img
-                  src="./assets/project2.jpg"
-                  alt="Tech News"
-                  class="projects__cards_img"
-                />
-              </div>
-              <div class="projects__cards_titles">
-                <h4>Dự Án 2</h4>
-                <h3>Login</h3>
-              </div>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/vothanhtong/Hotel-booking"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="projects_cards">
-              <div class="projects__cards_wrapper">
-                <img
-                  src="./assets/project3.jpg"
-                  alt="Spotify Clone"
-                  class="projects__cards_img"
-                />
-              </div>
-              <div class="projects__cards_titles">
-                <h4>Dự Án 3</h4>
-                <h3>Hotel-booking</h3>
-              </div>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/vothanhtong/Realtime_Chat_Application"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="projects_cards">
-              <div class="projects__cards_wrapper">
-                <img
-                  src="./assets/project4.jpg"
-                  alt="Realtime Chat Application"
-                  class="projects__cards_img"
-                />
-              </div>
-              <div class="projects__cards_titles">
-                <h4>Dự Án 4</h4>
-                <h3>Realtime Chat Application</h3>
-              </div>
-            </div>
-          </a>
-
-          <a
-            href="https://github.com/vothanhtong/Quan-ly-thoi-khoa-bieu"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="projects_cards">
-              <div class="projects__cards_wrapper">
-                <img
-                  src="./assets/project5.jpg"
-                  alt="Business Website"
-                  class="projects__cards_img"
-                />
-              </div>
-              <div class="projects__cards_titles">
-                <h4>Dự Án 5</h4>
-                <h3>Quản Lý Thời Khóa Biểu</h3>
-              </div>
-            </div>
-          </a>
-          <a
-            href="https://github.com/vothanhtong/SQL"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <div class="projects_cards">
-              <div class="projects__cards_wrapper">
-                <img
-                  src="./assets/project5.jpg"
-                  alt="Business Website"
-                  class="projects__cards_img"
-                />
-              </div>
-              <div class="projects__cards_titles">
-                <h4>Dự Án 6</h4>
-                <h3>SQL</h3>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CHỨNG CHỈ ===== -->
-    <section class="certificates__section">
-      <div class="container certificates_container">
-        <div class="section__header">
-          <h1 class="section__title">certificates</h1>
-          <p class="section__description">
-            Những chứng chỉ đã đạt được trong quá trình học tập và rèn luyện.
-          </p>
-        </div>
-
-        <div class="certificates__list">
-          <a href="assets/LPIC-1.pdf" target="_blank" class="cert_item">
-            LPIC-1: Linux Administrator
-          </a>
-
-          <a href="assets/LPIC-2.pdf" target="_blank" class="cert_item">
-            LPIC-2: Linux Engineer
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!--------------------------------- 
-      Footer
-    ----------------------------------->
-    <footer>
+    <!-- ======= Footer ======= -->
+    <footer role="contentinfo">
       <div class="container">
         <div class="footer__content">
           <p class="footer__copyright">© Võ Thanh Tòng Portfolio</p>
-          <div class="footer__social">
+          <nav class="footer__social" aria-label="Mạng xã hội">
             <a
               href="https://www.facebook.com/thanh.tong.378542/"
               target="_blank"
               rel="noopener noreferrer"
               class="social-link"
+              aria-label="Facebook của Võ Thanh Tòng"
             >
-              <img src="./assets/facebook.png" alt="Facebook" />
+              <img src="./assets/facebook.png" alt="" role="presentation" loading="lazy" />
               <span>Facebook</span>
             </a>
             <a
@@ -577,13 +546,149 @@
               target="_blank"
               rel="noopener noreferrer"
               class="social-link"
+              aria-label="Zalo của Võ Thanh Tòng"
             >
-              <img src="./assets/zalo.png" alt="Zalo" />
+              <img src="./assets/zalo.png" alt="" role="presentation" loading="lazy" />
               <span>Zalo</span>
             </a>
-          </div>
+          </nav>
         </div>
       </div>
     </footer>
+
+    <!-- ✅ Scroll-in Animation Script -->
+    <script>
+      const revealSections = document.querySelectorAll('.reveal-section');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+      );
+      revealSections.forEach((section) => observer.observe(section));
+    </script>
+
+    <!-- ✅ Phông nền Canvas chạy ngầm (Plexus Interactive) -->
+    <script>
+      const canvas = document.getElementById('plexusCanvas');
+      const ctx = canvas.getContext('2d');
+
+      let width, height;
+      let particles = [];
+      const maxDistance = 140; 
+      const particleCount = 85;
+
+      const mouse = { x: null, y: null, radius: 170 };
+
+      window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+
+      window.addEventListener('mouseout', () => {
+        mouse.x = null;
+        mouse.y = null;
+      });
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 0.9;
+          this.vy = (Math.random() - 0.5) * 0.9;
+          this.radius = Math.random() * 2 + 1.2;
+        }
+
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+
+          if (this.x < 0 || this.x > width) this.vx *= -1;
+          if (this.y < 0 || this.y > height) this.vy *= -1;
+        }
+
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = '#2563eb';
+          ctx.fill();
+        }
+      }
+
+      function init() {
+        resize();
+        particles = [];
+        for (let i = 0; i < particleCount; i++) {
+          particles.push(new Particle());
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        let grad = ctx.createLinearGradient(0, 0, width, height);
+        grad.addColorStop(0, '#f1f5f9');
+        grad.addColorStop(1, '#e2e8f0');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, width, height);
+
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            let dx = particles[i].x - particles[j].x;
+            let dy = particles[i].y - particles[j].y;
+            let dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < maxDistance) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(37, 99, 235, ${0.4 * (1 - dist / maxDistance)})`;
+              ctx.lineWidth = 0.7;
+              ctx.stroke();
+            }
+          }
+
+          if (mouse.x !== null && mouse.y !== null) {
+            let mdx = particles[i].x - mouse.x;
+            let mdy = particles[i].y - mouse.y;
+            let mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+
+            if (mdist < mouse.radius) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(mouse.x, mouse.y);
+              ctx.strokeStyle = `rgba(2, 132, 199, ${0.6 * (1 - mdist / mouse.radius)})`;
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+
+        particles.forEach(p => {
+          p.update();
+          p.draw();
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      window.addEventListener('resize', () => {
+        resize();
+        init();
+      });
+
+      init();
+      animate();
+    </script>
   </body>
 </html>

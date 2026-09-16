@@ -57,3 +57,54 @@
         transform: translateX(calc(0% + 12px));
     }
 }
+
+/* ========================================================
+   Scroll Reveal & Modern Micro-Interactions
+======================================================== */
+
+.reveal-section {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button click feedback */
+.primaryButton,
+.outlineButton,
+.cert-all-btn,
+.btn-cert-primary,
+.btn-cert-secondary {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.primaryButton:active,
+.outlineButton:active,
+.cert-all-btn:active,
+.btn-cert-primary:active,
+.btn-cert-secondary:active {
+    transform: scale(0.97) !important;
+}
+
+/* Accessibility: Respect user reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .reveal-section {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

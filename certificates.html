@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ✅ SEO Primary -->
+    <title>Chứng Chỉ Chuyên Môn | Võ Thanh Tòng Portfolio</title>
+    <meta
+      name="description"
+      content="Danh sách các chứng chỉ chuyên môn về Quản trị Hệ thống Linux (LPIC-1, LPIC-2), Quản lý Hạ tầng Mạng Doanh nghiệp và Tin học văn phòng Excel của Võ Thanh Tòng."
+    />
+    <meta name="keywords" content="Võ Thanh Tòng, chứng chỉ, LPIC-1, LPIC-2, Linux, Network, Excel, portfolio" />
+    <meta name="author" content="Võ Thanh Tòng" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ✅ Open Graph / Social -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Chứng Chỉ Chuyên Môn | Võ Thanh Tòng" />
+    <meta property="og:description" content="Khám phá các chứng chỉ quốc tế và chuyên môn về Linux, Mạng và Tin học văn phòng của Võ Thanh Tòng." />
+    <meta property="og:image" content="./assets/avatar.jpeg" />
+    <meta property="og:locale" content="vi_VN" />
+
+    <link rel="icon" href="./assets/rocket-icon.ico" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/certificates.css" />
+  </head>
+  <body>
+    <!-- Top Navigation -->
+    <nav class="cert-navbar" id="certNavbar" aria-label="Điều hướng chính">
+      <div class="cert-page-container cert-navbar__inner">
+        <a href="index.html" class="cert-nav__brand" aria-label="Về trang chủ của Võ Thanh Tòng">
+          <img
+            src="assets/avatar.jpeg"
+            alt="Võ Thanh Tòng"
+            class="cert-nav__avatar"
+            width="42"
+            height="42"
+          />
+          <div>
+            <div class="cert-nav__name">Võ Thanh Tòng</div>
+            <div class="cert-nav__role">Developer & Educator</div>
+          </div>
+        </a>
+
+        <a href="index.html" class="btn-back-home" id="btnBackHome" aria-label="Quay lại trang chủ">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Về Trang Chủ</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="cert-page-container" role="main">
+      <!-- Hero Banner -->
+      <section class="cert-hero" aria-labelledby="hero-title">
+        <div class="cert-hero__badge">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
+          Chứng Chỉ Và Năng Lực Đạt Được
+        </div>
+        <h1 id="hero-title" class="cert-hero__title">
+          Chứng Chỉ Và <span>Năng Lực Đạt Được</span>
+        </h1>
+        <p class="cert-hero__desc">
+          Tổng hợp các chứng chỉ quốc tế và chuyên môn trong quá trình học tập,
+          nghiên cứu và thực hành về Quản trị Hệ thống, Hạ tầng Mạng và Tin học
+          ứng dụng.
+        </p>
+
+        <!-- Stats Counter -->
+        <div class="cert-stats" role="list" aria-label="Thống kê chứng chỉ">
+          <div class="stat-item" role="listitem">
+            <span class="stat-number">4+</span>
+            <span class="stat-label">Chứng Chỉ Hoàn Thành</span>
+          </div>
+          <div class="stat-item" role="listitem">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Lĩnh Vực Chuyên Môn</span>
+          </div>
+          <div class="stat-item" role="listitem">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Xác Thực & Sẵn Sàng</span>
+          </div>
+        </div>
+
+        <!-- Filter Categories -->
+        <div class="cert-filter" id="certFilter" role="toolbar" aria-label="Bộ lọc chứng chỉ">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">
+            Tất Cả (4)
+          </button>
+          <button class="filter-btn" data-filter="linux" aria-pressed="false">
+            Hệ Điều Hành & Linux (2)
+          </button>
+          <button class="filter-btn" data-filter="network" aria-pressed="false">
+            Hạ Tầng & Quản Trị Mạng (1)
+          </button>
+          <button class="filter-btn" data-filter="office" aria-pressed="false">
+            Tin Học Văn Phòng (1)
+          </button>
+        </div>
+      </section>
+
+      <!-- Certificates Grid -->
+      <section class="cert-grid" id="certGrid" aria-label="Danh sách chứng chỉ">
+        <!-- 1. LPIC-1 -->
+        <article class="cert-card" data-category="linux">
+          <div class="cert-card__media">
+            <img
+              src="assets/imageLPIC1.jpg"
+              alt="Chứng chỉ LPIC-1: Linux Administrator"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="cert-card__status-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Đã Đạt Được
+            </div>
+          </div>
+          <div class="cert-card__body">
+            <div class="cert-card__category">Hệ Điều Hành & Linux</div>
+            <h2 class="cert-card__title">LPIC-1: Linux Administrator</h2>
+            <div class="cert-card__issuer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              <span>Tổ chức cấp: <strong>Linux Professional Institute (LPI)</strong></span>
+            </div>
+            <p class="cert-card__desc">
+              Chứng chỉ quốc tế khẳng định năng lực quản trị hệ thống Linux thực tế: thao tác dòng lệnh, quản lý tiến trình, phân vùng ổ đĩa, phân quyền người dùng và quản trị hệ thống tệp tin chuyên nghiệp.
+            </p>
+            <div class="cert-card__skills" role="list" aria-label="Kỹ năng chính">
+              <span class="skill-tag" role="listitem">Linux CLI</span>
+              <span class="skill-tag" role="listitem">System Architecture</span>
+              <span class="skill-tag" role="listitem">GNU & Unix Commands</span>
+              <span class="skill-tag" role="listitem">Devices & Filesystems</span>
+              <span class="skill-tag" role="listitem">System Permissions</span>
+            </div>
+            <div class="cert-card__footer">
+              <a
+                href="assets/LPIC-1.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-cert-primary"
+                aria-label="Mở File PDF chứng chỉ LPIC-1"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                <span>Mở File PDF</span>
+              </a>
+              <button
+                class="btn-cert-secondary btn-preview-cert"
+                data-title="LPIC-1: Linux Administrator"
+                data-type="pdf"
+                data-src="assets/LPIC-1.pdf"
+                aria-label="Xem nhanh chứng chỉ LPIC-1 trong modal"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span>Xem Nhanh</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. LPIC-2 -->
+        <article class="cert-card" data-category="linux">
+          <div class="cert-card__media">
+            <img
+              src="assets/imageLPIC2.jpg"
+              alt="Chứng chỉ LPIC-2: Linux Engineer"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="cert-card__status-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Đã Đạt Được
+            </div>
+          </div>
+          <div class="cert-card__body">
+            <div class="cert-card__category">Hệ Điều Hành Và Linux</div>
+            <h2 class="cert-card__title">LPIC-2: Linux Engineer</h2>
+            <div class="cert-card__issuer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              <span>Tổ chức cấp: <strong>Linux Professional Institute (LPI)</strong></span>
+            </div>
+            <p class="cert-card__desc">
+              Chứng chỉ cấp cao dành cho kỹ sư Linux chuyên sâu: biên dịch nhân Linux Kernel, triển khai hạ tầng mạng, cấu hình dịch vụ web/DNS/mail, quản trị lưu trữ nâng cao và bảo mật hệ thống máy chủ.
+            </p>
+            <div class="cert-card__skills" role="list" aria-label="Kỹ năng chính">
+              <span class="skill-tag" role="listitem">Linux Kernel</span>
+              <span class="skill-tag" role="listitem">System Startup</span>
+              <span class="skill-tag" role="listitem">Network Services (DNS, Web)</span>
+              <span class="skill-tag" role="listitem">Advanced Storage & LVM</span>
+              <span class="skill-tag" role="listitem">System Security</span>
+            </div>
+            <div class="cert-card__footer">
+              <a
+                href="assets/LPIC-2.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-cert-primary"
+                aria-label="Mở File PDF chứng chỉ LPIC-2"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                <span>Mở File PDF</span>
+              </a>
+              <button
+                class="btn-cert-secondary btn-preview-cert"
+                data-title="LPIC-2: Linux Engineer"
+                data-type="pdf"
+                data-src="assets/LPIC-2.pdf"
+                aria-label="Xem nhanh chứng chỉ LPIC-2 trong modal"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span>Xem Nhanh</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Enterprise Network Infrastructure Management -->
+        <article class="cert-card" data-category="network">
+          <div class="cert-card__media">
+            <img
+              src="assets/protect-networks.webp"
+              alt="Chứng chỉ Quản trị Hạ tầng Mạng Doanh nghiệp"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="cert-card__status-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Đã Hoàn Thành
+            </div>
+          </div>
+          <div class="cert-card__body">
+            <div class="cert-card__category">Hạ Tầng Và Quản Trị Mạng</div>
+            <h2 class="cert-card__title">Enterprise Network Infrastructure Management</h2>
+            <div class="cert-card__issuer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+              </svg>
+              <span>Chuyên môn: <strong>Quản Trị Hạ Tầng Mạng Doanh Nghiệp</strong></span>
+            </div>
+            <p class="cert-card__desc">
+              Chương trình chuyên sâu về thiết kế, triển khai và vận hành hạ tầng mạng doanh nghiệp: định tuyến và chuyển mạch (Routing & Switching), phân tách VLAN, giám sát lưu lượng và khắc phục sự cố mạng.
+            </p>
+            <div class="cert-card__skills" role="list" aria-label="Kỹ năng chính">
+              <span class="skill-tag" role="listitem">Routing & Switching</span>
+              <span class="skill-tag" role="listitem">VLAN & Trunking</span>
+              <span class="skill-tag" role="listitem">Network Security & ACL</span>
+              <span class="skill-tag" role="listitem">DHCP / DNS / NAT</span>
+              <span class="skill-tag" role="listitem">Troubleshooting & Monitoring</span>
+            </div>
+            <div class="cert-card__footer">
+              <a
+                href="assets/VO THANH TONG.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-cert-primary"
+                aria-label="Mở File PDF chứng chỉ Enterprise Network"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                <span>Mở File PDF</span>
+              </a>
+              <button
+                class="btn-cert-secondary btn-preview-cert"
+                data-title="Enterprise Network Infrastructure Management"
+                data-type="pdf"
+                data-src="assets/VO THANH TONG.pdf"
+                aria-label="Xem nhanh chứng chỉ Enterprise Network trong modal"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span>Xem Nhanh</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Tin Học Văn Phòng Excel -->
+        <article class="cert-card" data-category="office">
+          <div class="cert-card__media">
+            <img
+              src="assets/Excel.png"
+              alt="Chứng chỉ Tin học văn phòng Excel"
+              style="object-fit: contain; padding: 18px;"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="cert-card__status-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Đã Hoàn Thành
+            </div>
+          </div>
+          <div class="cert-card__body">
+            <div class="cert-card__category">Tin Học Văn Phòng</div>
+            <h2 class="cert-card__title">Tin Học Văn Phòng - Microsoft Excel</h2>
+            <div class="cert-card__issuer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+              <span>Chuyên môn: <strong>Tin Học Ứng Dụng & Xử Lý Dữ Liệu</strong></span>
+            </div>
+            <p class="cert-card__desc">
+              Chứng chỉ tin học văn phòng nâng cao: làm chủ các hàm tính toán phức tạp (XLOOKUP, INDEX-MATCH), tổng hợp và phân tích dữ liệu đa chiều với Pivot Table, trực quan hóa biểu đồ và xây dựng báo cáo Dashboard.
+            </p>
+            <div class="cert-card__skills" role="list" aria-label="Kỹ năng chính">
+              <span class="skill-tag" role="listitem">XLOOKUP / VLOOKUP</span>
+              <span class="skill-tag" role="listitem">Pivot Table & Pivot Chart</span>
+              <span class="skill-tag" role="listitem">Data Cleaning & Sorting</span>
+              <span class="skill-tag" role="listitem">Conditional Formatting</span>
+              <span class="skill-tag" role="listitem">Interactive Dashboard</span>
+            </div>
+            <div class="cert-card__footer">
+              <a
+                href="assets/MOS 2019.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-cert-primary"
+                aria-label="Mở File PDF chứng chỉ MOS 2019 Excel"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                <span>Mở File PDF</span>
+              </a>
+              <button
+                class="btn-cert-secondary btn-preview-cert"
+                data-title="Tin Học Văn Phòng - Microsoft Excel Chuyên Sâu"
+                data-type="pdf"
+                data-src="assets/MOS 2019.pdf"
+                aria-label="Xem nhanh chứng chỉ Excel trong modal"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span>Xem Nhanh</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Certificate Preview Modal -->
+    <div class="cert-modal" id="certModal" aria-hidden="true">
+      <div class="cert-modal__container" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
+        <div class="cert-modal__header">
+          <h3 class="cert-modal__title" id="certModalTitle">Chi Tiết Chứng Chỉ</h3>
+          <button class="cert-modal__close" id="certModalClose" aria-label="Đóng cửa sổ xem chứng chỉ">&times;</button>
+        </div>
+        <div class="cert-modal__body" id="certModalBody">
+          <!-- Content injected via JS -->
+        </div>
+        <div class="cert-modal__footer">
+          <a href="#" id="modalDirectLink" class="btn-cert-primary" target="_blank" rel="noopener noreferrer" aria-label="Mở chứng chỉ trong tab mới">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            <span>Mở Tab Mới</span>
+          </a>
+          <button class="btn-cert-secondary" id="modalCloseBtn" aria-label="Đóng modal">Đóng</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+      <div class="container">
+        <div class="footer__content">
+          <p class="footer__copyright">© Võ Thanh Tòng Portfolio</p>
+          <div class="footer__social" aria-label="Mạng xã hội">
+            <a
+              href="https://www.facebook.com/thanh.tong.378542/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+              aria-label="Facebook của Võ Thanh Tòng"
+            >
+              <img src="./assets/facebook.png" alt="" role="presentation" loading="lazy" />
+              <span>Facebook</span>
+            </a>
+            <a
+              href="https://zalo.me/0917772494"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+              aria-label="Zalo của Võ Thanh Tòng"
+            >
+              <img src="./assets/zalo.png" alt="" role="presentation" loading="lazy" />
+              <span>Zalo</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+      // Filter functionality
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const certCards = document.querySelectorAll('.cert-card');
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach((b) => {
+            b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-pressed', 'true');
+
+          const filterValue = btn.getAttribute('data-filter');
+
+          certCards.forEach((card) => {
+            const cardCat = card.getAttribute('data-category');
+            if (filterValue === 'all' || filterValue === cardCat) {
+              card.style.display = 'flex';
+              card.style.animation = 'modalScaleIn 0.3s ease';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Preview Modal functionality
+      const modal = document.getElementById('certModal');
+      const modalTitle = document.getElementById('certModalTitle');
+      const modalBody = document.getElementById('certModalBody');
+      const modalDirectLink = document.getElementById('modalDirectLink');
+      const modalClose = document.getElementById('certModalClose');
+      const modalCloseBtn = document.getElementById('modalCloseBtn');
+      const previewButtons = document.querySelectorAll('.btn-preview-cert');
+
+      function openModal(title, type, src) {
+        modalTitle.textContent = title;
+        modalDirectLink.href = src;
+
+        if (type === 'pdf') {
+          modalBody.innerHTML = `
+            <iframe src="${src}" title="${title}"></iframe>
+          `;
+        } else {
+          modalBody.innerHTML = `
+            <img src="${src}" alt="${title}" />
+          `;
+        }
+
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        modalBody.innerHTML = '';
+        document.body.style.overflow = '';
+      }
+
+      previewButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const title = btn.getAttribute('data-title');
+          const type = btn.getAttribute('data-type');
+          const src = btn.getAttribute('data-src');
+          openModal(title, type, src);
+        });
+      });
+
+      modalClose.addEventListener('click', closeModal);
+      modalCloseBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+    </script>
+  </body>
+</html>
