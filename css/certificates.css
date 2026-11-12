@@ -2,8 +2,8 @@
    Certificates Page Stylesheet - Vo Thanh Tong Portfolio
    =================================================== */
 
-@import "theme.css";
-@import "./sections/footer.css";
+@import "theme.css?v=20261112";
+@import "./sections/footer.css?v=20261112";
 
 * {
   box-sizing: border-box;

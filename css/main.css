@@ -1,12 +1,12 @@
-@import "theme.css";
-@import "./sections/nav.css";
-@import "./sections/hero.css";
-@import "./sections/about-me.css";
-@import "./sections/skills.css";
-@import "./sections/projects.css";
-@import "./sections/footer.css";
-@import "./effects.css";
-@import "./animation.css";
+@import "theme.css?v=20261112";
+@import "./sections/nav.css?v=20261112";
+@import "./sections/hero.css?v=20261112";
+@import "./sections/about-me.css?v=20261112";
+@import "./sections/skills.css?v=20261112";
+@import "./sections/projects.css?v=20261112";
+@import "./sections/footer.css?v=20261112";
+@import "./effects.css?v=20261112";
+@import "./animation.css?v=20261112";
 
 * {
 	box-sizing: border-box;
