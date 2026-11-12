@@ -1,9 +1,11 @@
 @import "theme.css";
-@import "./sections/header.css";
+@import "./sections/nav.css";
+@import "./sections/hero.css";
 @import "./sections/about-me.css";
 @import "./sections/skills.css";
 @import "./sections/projects.css";
 @import "./sections/footer.css";
+@import "./effects.css";
 @import "./animation.css";
 
 * {
@@ -21,8 +23,29 @@
 }
 
 body {
-	background: transparent;
-	color: #000000;
+	background-color: var(--bg-base);
+	color: var(--text-body);
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background-image:
+		radial-gradient(circle at 18% 12%, rgba(71, 185, 234, 0.09), transparent 42%),
+		radial-gradient(circle at 82% 68%, rgba(99, 102, 241, 0.1), transparent 45%),
+		linear-gradient(rgba(148, 197, 255, 0.045) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(148, 197, 255, 0.045) 1px, transparent 1px);
+	background-size: 100% 100%, 100% 100%, 64px 64px, 64px 64px;
+	-webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, #000 45%, transparent 100%);
+	mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, #000 45%, transparent 100%);
+}
+
+::selection {
+	background: hsla(var(--p-500-code), 0.4);
+	color: #fff;
 }
 
 a {
@@ -32,6 +55,11 @@ a {
 section {
 	margin-top: 120px;
 	margin-bottom: 120px;
+}
+
+section[id],
+footer[id] {
+	scroll-margin-top: 92px;
 }
 
 .container {
@@ -51,7 +79,7 @@ section {
 	font-size: var(--h2-font-size);
 	line-height: var(--h2-line-height);
 	font-weight: bold;
-	color: #000000;
+	color: var(--text-strong);
 	text-transform: capitalize;
 	margin-bottom: 20px;
 	text-shadow: none;
@@ -62,7 +90,7 @@ section {
 	font-size: var(--h4-font-size);
 	max-width: 70ch;
 	margin-bottom: 50px;
-	color: #333333;
+	color: var(--text-body);
 	line-height: 1.5;
 }
 
@@ -80,11 +108,13 @@ section {
 }
 
 .home-cert-card {
-	background: #ffffff;
+	background: var(--surface);
 	border-radius: 16px;
 	padding: 1.25rem;
-	border: 1px solid rgba(226, 232, 240, 0.9);
-	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+	border: 1px solid var(--border-soft);
+	box-shadow: 0 18px 40px -28px rgba(2, 8, 23, 0.8);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
 	display: flex;
 	flex-direction: column;
 	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -93,19 +123,20 @@ section {
 
 .home-cert-card:hover {
 	transform: translateY(-5px);
-	border-color: var(--p-400);
-	box-shadow: 0 12px 28px rgba(99, 102, 241, 0.12);
+	border-color: var(--border-strong);
+	box-shadow: 0 24px 48px -24px rgba(2, 8, 23, 0.9), 0 0 32px -12px var(--glow-cyan);
 }
 
 .home-cert-badge {
 	position: absolute;
 	top: 14px;
 	right: 14px;
-	background: rgba(99, 102, 241, 0.1);
-	color: var(--p-600);
+	background: rgba(71, 185, 234, 0.14);
+	color: #8fdcff;
 	font-size: 0.72rem;
 	font-weight: 700;
 	padding: 3px 8px;
+	border: 1px solid rgba(71, 185, 234, 0.25);
 	border-radius: 999px;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
@@ -116,7 +147,7 @@ section {
 	height: 130px;
 	border-radius: 10px;
 	overflow: hidden;
-	background: #f8fafc;
+	background: rgba(255, 255, 255, 0.04);
 	margin-bottom: 1rem;
 	display: flex;
 	align-items: center;
@@ -137,14 +168,14 @@ section {
 .home-cert-card h3 {
 	font-size: 1.05rem;
 	font-weight: 700;
-	color: var(--p-950);
+	color: var(--text-strong);
 	margin: 0 0 0.4rem;
 	line-height: 1.35;
 }
 
 .home-cert-card p {
 	font-size: 0.85rem;
-	color: var(--n-500);
+	color: var(--text-muted);
 	margin: 0 0 1rem;
 	line-height: 1.4;
 	flex-grow: 1;
@@ -156,13 +187,13 @@ section {
 	gap: 4px;
 	font-size: 0.9rem;
 	font-weight: 600;
-	color: var(--p-600);
+	color: var(--p-450);
 	text-decoration: none;
 	transition: all 0.2s ease;
 }
 
 .home-cert-link:hover {
-	color: var(--p-700);
+	color: #9ae3ff;
 	transform: translateX(3px);
 }
 
@@ -181,13 +212,13 @@ section {
 	display: inline-flex;
 	align-items: center;
 	gap: 8px;
-	box-shadow: 0 4px 16px rgba(99, 102, 241, 0.25);
+	box-shadow: 0 10px 28px -12px var(--glow-indigo);
 	transition: all 0.3s ease;
 }
 
 .cert-all-btn:hover {
 	transform: translateY(-2px);
-	box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+	box-shadow: 0 16px 34px -12px var(--glow-cyan);
 }
 
 @media (max-width: 1024px) {
@@ -209,6 +240,6 @@ section {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1;
+  z-index: -2;
   pointer-events: none;
 }

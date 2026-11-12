@@ -18,28 +18,32 @@
 }
 
 .projects_cards {
-	background: var(--p-20, #ffffff);
+	background: var(--surface);
+	border: 1px solid var(--border-soft);
 	border-radius: 1.5rem;
 	overflow: hidden;
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+	box-shadow: 0 24px 50px -36px rgba(2, 8, 23, 0.9);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
 	cursor: pointer;
 }
 
 .projects_cards:hover {
 	transform: translateY(-8px);
-	box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
+	border-color: var(--border-strong);
+	box-shadow: 0 28px 54px -26px rgba(2, 8, 23, 0.95), 0 0 36px -16px var(--glow-cyan);
 }
 
 /* So le: card ở cột giữa mỗi hàng thụt xuống */
-.projects_cards:nth-child(3n+2) {
+.projects__cards_container > a:nth-child(3n+2) {
 	margin-top: 3rem;
 }
 
 .projects__cards_wrapper {
 	aspect-ratio: 4 / 3;
 	overflow: hidden;
-	background-color: var(--p-100, #eef2ff);
+	background-color: rgba(255, 255, 255, 0.04);
 }
 
 .projects__cards_img {
@@ -62,7 +66,7 @@
 	font-size: 0.85rem;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	color: var(--p-600, #4f46e5);
+	color: var(--p-450);
 	margin-bottom: 0.5rem;
 	font-weight: 600;
 }
@@ -70,7 +74,7 @@
 .projects__cards_titles h3 {
 	font-size: 1.25rem;
 	font-weight: 700;
-	color: var(--n-800, #1f2937);
+	color: var(--text-strong);
 	line-height: 1.4;
 	margin: 0;
 }
@@ -83,7 +87,7 @@
 		margin-top: 2rem;
 	}
 
-	.projects_cards:nth-child(3n+2) {
+	.projects__cards_container > a:nth-child(3n+2) {
 		margin-top: 0;
 	}
 

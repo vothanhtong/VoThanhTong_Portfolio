@@ -1,0 +1,54 @@
+/* =============== Custom cursor =============== */
+.cursor-dot,
+.cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    mix-blend-mode: difference;
+    will-change: transform;
+}
+
+.cursor-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.cursor-ring {
+    width: 34px;
+    height: 34px;
+    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+}
+
+html.has-custom-cursor,
+html.has-custom-cursor * {
+    cursor: none;
+}
+
+html.has-custom-cursor .cursor-dot,
+html.has-custom-cursor .cursor-ring {
+    opacity: 1;
+}
+
+.cursor-ring.is-hover {
+    width: 54px;
+    height: 54px;
+    border-color: rgba(255, 255, 255, 1);
+}
+
+.cursor-dot.is-hover {
+    opacity: 0.4;
+}
+
+@media (hover: none), (pointer: coarse) {
+    .cursor-dot,
+    .cursor-ring {
+        display: none;
+    }
+}

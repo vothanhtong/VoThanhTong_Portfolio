@@ -163,6 +163,20 @@ table {
   --n-600: hsl(215, 16%, 35%);
   --foreground-color: hsl(0, 0%, 100%);
 
+  /* Dark surfaces */
+  --bg-base: #061024;
+  --bg-deep: #040b18;
+  --surface: rgba(13, 28, 52, 0.75);
+  --surface-strong: rgba(15, 33, 60, 0.92);
+  --surface-soft: rgba(255, 255, 255, 0.045);
+  --border-soft: rgba(148, 163, 184, 0.16);
+  --border-strong: rgba(148, 197, 255, 0.32);
+  --text-strong: #f2f7ff;
+  --text-body: #aebdd2;
+  --text-muted: #8296b0;
+  --glow-cyan: rgba(71, 185, 234, 0.28);
+  --glow-indigo: rgba(99, 102, 241, 0.24);
+
   /* Gradients */
   --main-gradient-color: linear-gradient(to right, var(--p-450), var(--p-500));
   --gradient-color: linear-gradient(var(--foreground-color) 10%, var(--p-100));

@@ -76,24 +76,7 @@
     <main class="cert-page-container" role="main">
       <!-- Hero Banner -->
       <section class="cert-hero" aria-labelledby="hero-title">
-        <div class="cert-hero__badge">
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            aria-hidden="true"
-          >
-            <circle cx="12" cy="8" r="7"></circle>
-            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-          </svg>
-          Chứng Chỉ Và Năng Lực Đạt Được
-        </div>
-        <h1 id="hero-title" class="cert-hero__title">
-          Chứng Chỉ Và <span>Năng Lực Đạt Được</span>
-        </h1>
+        <h1 id="hero-title" class="sr-only">Chứng Chỉ Chuyên Môn</h1>
         <p class="cert-hero__desc">
           Tổng hợp các chứng chỉ quốc tế và chuyên môn trong quá trình học tập,
           nghiên cứu và thực hành về Quản trị Hệ thống, Hạ tầng Mạng và Tin học
@@ -504,8 +487,10 @@
       const modalClose = document.getElementById('certModalClose');
       const modalCloseBtn = document.getElementById('modalCloseBtn');
       const previewButtons = document.querySelectorAll('.btn-preview-cert');
+      let lastFocused = null;
 
       function openModal(title, type, src) {
+        lastFocused = document.activeElement;
         modalTitle.textContent = title;
         modalDirectLink.href = src;
 
@@ -522,6 +507,7 @@
         modal.classList.add('active');
         modal.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+        modalClose.focus();
       }
 
       function closeModal() {
@@ -529,6 +515,10 @@
         modal.setAttribute('aria-hidden', 'true');
         modalBody.innerHTML = '';
         document.body.style.overflow = '';
+        if (lastFocused) {
+          lastFocused.focus();
+          lastFocused = null;
+        }
       }
 
       previewButtons.forEach((btn) => {
@@ -545,6 +535,20 @@
       modal.addEventListener('click', (e) => {
         if (e.target === modal) {
           closeModal();
+        }
+      });
+      modal.addEventListener('keydown', (e) => {
+        if (e.key !== 'Tab') return;
+        const focusables = [...modal.querySelectorAll('a[href], button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])')];
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
         }
       });
       document.addEventListener('keydown', (e) => {

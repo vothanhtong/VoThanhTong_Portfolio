@@ -107,4 +107,10 @@
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+
+    /* Giữ dải icon ở đúng vị trí, tránh bị đẩy ra ngoài khi tắt animation */
+    .icons-list {
+        animation: none !important;
+        transform: none !important;
+    }
 }

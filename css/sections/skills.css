@@ -23,27 +23,36 @@
         gap: 12px;
     }
 
-    & h2 {
-        font-size: var(--h2-font-size);
-        line-height: var(--h2-line-height);
+    & h3 {
+        font-size: var(--h3-font-size);
+        line-height: var(--h3-line-height);
         font-weight: 600;
         text-transform: capitalize;
+        color: var(--text-strong);
     }
 
     & p {
         margin-top: 12px;
-        color: var(--n--500);
+        color: var(--text-body);
         max-width: 60ch;
     }
 }
 
 .skills__grid_item {
     overflow: hidden;
-    border: 2px solid var(--p-100);
+    border: 1px solid var(--border-soft);
     border-radius: 24px;
-    background-color: var(--p-20);
+    background-color: var(--surface);
     padding: 2rem 2rem;
-    box-shadow: 0px 2px 4px hsla(233, 45%, 20%, 0.1);
+    box-shadow: 0 24px 50px -36px rgba(2, 8, 23, 0.9);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        border-color: var(--border-strong);
+        box-shadow: 0 24px 50px -30px rgba(2, 8, 23, 0.95), 0 0 34px -16px var(--glow-cyan);
+    }
 
     &:nth-child(1) {
         border: none;
@@ -101,11 +110,11 @@
         }
 
         & .icon-badges:nth-child(odd) {
-            background: white;
-            border: 1px solid var(--p-100);
+            background: rgba(255, 255, 255, 0.055);
+            border: 1px solid var(--border-soft);
 
             & span {
-                background: var(--main-gradient-color);
+                background: linear-gradient(90deg, var(--p-400), var(--p-450));
                 color: transparent;
                 background-clip: text;
             }
@@ -132,13 +141,20 @@
             justify-content: center;
             gap: 8px;
             padding: 8px 16px;
-            border: 1px solid var(--p-100);
+            border: 1px solid var(--border-soft);
             border-radius: 24px;
-            background-color: white;
+            background-color: var(--surface-soft);
+            color: #c8d7ea;
             font-weight: 600;
             white-space: normal;
             /* 🔥 fix bể */
             text-align: center;
+            transition: border-color 0.25s ease, background-color 0.25s ease;
+        }
+
+        .softSkills_badge:hover {
+            border-color: var(--border-strong);
+            background-color: rgba(71, 185, 234, 0.08);
         }
 
         /* Thêm icon check vào bên trái mỗi badge */
@@ -151,27 +167,6 @@
             /* Nếu đường dẫn check-icon.svg khác, sửa lại cho đúng */
         }
 
-        & .softSkills_badge p {
-            background: var(--main-gradient-color);
-            color: transparent;
-            background-clip: text;
-            margin: 0;
-        }
-
-        & .softSkills__book_icons {
-            grid-column: span 2;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        & .softSkills__book_icons img {
-            height: 40px;
-            width: 40px;
-            position: static;
-            transform: none;
-        }
     }
 
     &:nth-child(4) {

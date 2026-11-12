@@ -35,68 +35,118 @@
   </head>
   <body>
     <!-- Phông nền Canvas chạy ngầm -->
-    <canvas id="plexusCanvas"></canvas>
-    <!-- =============== Header =============== -->
-    <header role="banner">
-      <div class="container header__container">
-        <!-- left column -->
-        <div class="header__column--left">
-          <!-- avatar — above fold, không lazy load -->
-          <div
-            class="header__img"
-            role="img"
-            aria-label="Ảnh đại diện của Võ Thanh Tòng"
-          ></div>
+    <canvas id="plexusCanvas" aria-hidden="true"></canvas>
+    <!-- =============== Navbar =============== -->
+    <nav class="site-nav" id="siteNav" aria-label="Điều hướng chính">
+      <div class="container nav__inner">
+        <a href="#top" class="nav__brand" aria-label="Về đầu trang">
+          <span class="nav__logo" aria-hidden="true">
+            <img src="assets/avatar.jpeg" alt="" width="38" height="38" />
+          </span>
+          <span class="nav__name">Võ Thanh Tòng</span>
+        </a>
 
-          <div class="header__content--left">
-            <h2 class="header__title">Võ Thanh Tòng</h2>
-            <div class="header__badge_container" aria-label="Vai trò">
-              <div class="badge">Lập trình web</div>
-              <div class="badge">Giáo viên Scratch, Python</div>
-            </div>
-            <p>
-              Mong muốn ứng tuyển vị trí <span>Developer</span> trong
-              lĩnh vực phát triển web và Giáo viên Lập trình.
-            </p>
-          </div>
+        <button
+          class="nav__toggle"
+          id="navToggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="navMenu"
+          aria-label="Mở menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav__menu" id="navMenu">
+          <a href="#about">Giới thiệu</a>
+          <a href="#skills">Kỹ năng</a>
+          <a href="#projects">Dự án</a>
+          <a href="#certificates">Chứng chỉ</a>
+          <a href="#contact">Liên hệ</a>
+          <a href="assets/VoThanhTong-TopCV.pdf" class="nav__menu-cta" target="_blank" rel="noopener noreferrer" download>Tải CV</a>
         </div>
 
-        <!-- right column -->
-        <div class="header__column--right">
-          <h2 class="header__title">Thông Tin Liên Hệ</h2>
-          <p>
-            Gửi email cho mình tại:
-            <a href="mailto:vothanhtong9295@gmail.com" class="contact-link">
-              <span>vothanhtong9295@gmail.com</span>
-            </a>
-          </p>
-          <p>
-            Gọi cho mình tại:
-            <a href="tel:+84917772494" class="contact-link">
-              <span>0917772494</span>
-            </a>
-          </p>
-          <p>
-            GitHub của mình là:
-            <a
-              href="https://github.com/vothanhtong"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="github-link"
-              aria-label="GitHub của Võ Thanh Tòng"
-            >
-              vothanhtong
-            </a>
-          </p>
+        <a
+          href="assets/VoThanhTong-TopCV.pdf"
+          class="nav__cta"
+          target="_blank"
+          rel="noopener noreferrer"
+          download
+        >Tải CV</a>
+      </div>
+    </nav>
+
+    <!-- =============== Hero =============== -->
+    <header class="hero" id="top">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__bg-img"></div>
+      </div>
+      <div class="hero__stars" aria-hidden="true"></div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__fade" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+        <h1 class="hero__title">
+          Hi I'm Võ Thanh Tòng.<br />
+          I'm A Web Developer.
+        </h1>
+
+        <p class="hero__desc">
+          Mình là <strong>Võ Thanh Tòng</strong> — sinh viên Hệ thống thông tin
+          quản lý, đam mê xây dựng sản phẩm web với React, Next.js và Node.js.
+          Đồng thời mình giảng dạy Scratch và Python cho các bạn nhỏ.
+        </p>
+
+        <ul class="hero__points">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="8 12 11 15 16 9"></polyline>
+            </svg>
+            React · Next.js · Node.js · PostgreSQL
+          </li>
+        </ul>
+
+        <div class="hero__actions">
+          <a href="#projects" class="hero__btn hero__btn--primary">
+            Xem dự án
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="4" y1="12" x2="20" y2="12"></line>
+              <polyline points="14 6 20 12 14 18"></polyline>
+            </svg>
+          </a>
+          <a
+            href="assets/VoThanhTong-TopCV.pdf"
+            class="hero__btn hero__btn--ghost"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+          >Tải CV</a>
+        </div>
+
+        <div class="hero__contact">
+          <a href="mailto:vothanhtong9295@gmail.com">vothanhtong9295@gmail.com</a>
+          <span aria-hidden="true">·</span>
+          <a href="tel:+84917772494">0917772494</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://github.com/vothanhtong" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </div>
+
+      <a class="hero__scroll" href="#about" aria-label="Cuộn xuống phần giới thiệu">
+        <span></span>
+      </a>
     </header>
+
+    <!-- Hiệu ứng con trỏ -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
 
     <!-- =============== Main Content =============== -->
     <main role="main">
 
       <!-- ======= About Me ======= -->
-      <section class="aboutMe__section reveal-section" aria-labelledby="about-title">
+      <section class="aboutMe__section reveal-section" id="about" aria-labelledby="about-title">
         <!-- Hình động 2 bên -->
         <img
           src="./assets/rocket-icon.svg"
@@ -139,7 +189,7 @@
                 aria-label="Tải xuống CV của Võ Thanh Tòng"
               >Tải CV</a>
 
-              <a href="#ProjectContainer" class="outlineButton">Xem Dự Án</a>
+              <a href="#projects" class="outlineButton">Xem Dự Án</a>
               <a href="certificates.html" class="outlineButton">Xem Chứng Chỉ</a>
             </div>
           </div>
@@ -147,7 +197,7 @@
       </section>
 
       <!-- ======= Skills ======= -->
-      <section class="skills__section reveal-section" aria-labelledby="skills-title">
+      <section class="skills__section reveal-section" id="skills" aria-labelledby="skills-title">
         <div class="container skills__container">
           <div class="section__header">
             <h2 id="skills-title" class="section__title">Kỹ năng và Chuyên môn</h2>
@@ -285,7 +335,7 @@
       </section>
 
       <!-- ======= Projects ======= -->
-      <section class="projects__section reveal-section" id="ProjectContainer" aria-labelledby="projects-title">
+      <section class="projects__section reveal-section" id="projects" aria-labelledby="projects-title">
         <div class="container projects_container">
           <div class="section__header">
             <h2 id="projects-title" class="section__title">Đồ Án Thực Chiến</h2>
@@ -438,7 +488,7 @@
       </section>
 
       <!-- ======= Chứng Chỉ ======= -->
-      <section class="certificates__section reveal-section" aria-labelledby="certs-title">
+      <section class="certificates__section reveal-section" id="certificates" aria-labelledby="certs-title">
         <div class="container certificates_container">
           <div class="section__header">
             <h2 id="certs-title" class="section__title">Chứng Chỉ Và Bằng Cấp</h2>
@@ -526,7 +576,7 @@
     </main>
 
     <!-- ======= Footer ======= -->
-    <footer role="contentinfo">
+    <footer id="contact" role="contentinfo">
       <div class="container">
         <div class="footer__content">
           <p class="footer__copyright">© Võ Thanh Tòng Portfolio</p>
@@ -580,8 +630,8 @@
 
       let width, height;
       let particles = [];
-      const maxDistance = 140; 
-      const particleCount = 85;
+      const maxDistance = 140;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       const mouse = { x: null, y: null, radius: 170 };
 
@@ -620,7 +670,7 @@
         draw() {
           ctx.beginPath();
           ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-          ctx.fillStyle = '#2563eb';
+          ctx.fillStyle = '#5bc8f5';
           ctx.fill();
         }
       }
@@ -628,19 +678,20 @@
       function init() {
         resize();
         particles = [];
-        for (let i = 0; i < particleCount; i++) {
+        const count = window.innerWidth < 768 ? 28 : 85;
+        for (let i = 0; i < count; i++) {
           particles.push(new Particle());
         }
       }
 
+      function paintBackground() {
+        ctx.fillStyle = '#061024';
+        ctx.fillRect(0, 0, width, height);
+      }
+
       function animate() {
         ctx.clearRect(0, 0, width, height);
-
-        let grad = ctx.createLinearGradient(0, 0, width, height);
-        grad.addColorStop(0, '#f1f5f9');
-        grad.addColorStop(1, '#e2e8f0');
-        ctx.fillStyle = grad;
-        ctx.fillRect(0, 0, width, height);
+        paintBackground();
 
         for (let i = 0; i < particles.length; i++) {
           for (let j = i + 1; j < particles.length; j++) {
@@ -652,7 +703,7 @@
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.strokeStyle = `rgba(37, 99, 235, ${0.4 * (1 - dist / maxDistance)})`;
+              ctx.strokeStyle = `rgba(91, 200, 245, ${0.38 * (1 - dist / maxDistance)})`;
               ctx.lineWidth = 0.7;
               ctx.stroke();
             }
@@ -667,7 +718,7 @@
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(mouse.x, mouse.y);
-              ctx.strokeStyle = `rgba(2, 132, 199, ${0.6 * (1 - mdist / mouse.radius)})`;
+              ctx.strokeStyle = `rgba(147, 197, 253, ${0.55 * (1 - mdist / mouse.radius)})`;
               ctx.lineWidth = 1;
               ctx.stroke();
             }
@@ -684,11 +735,23 @@
 
       window.addEventListener('resize', () => {
         resize();
-        init();
+        if (prefersReducedMotion) {
+          paintBackground();
+        } else {
+          init();
+        }
       });
 
-      init();
-      animate();
+      if (prefersReducedMotion) {
+        resize();
+        paintBackground();
+      } else {
+        init();
+        animate();
+      }
     </script>
+
+    <!-- Navbar, hero parallax & custom cursor -->
+    <script src="js/main.js"></script>
   </body>
 </html>

@@ -120,38 +120,20 @@ body {
 
 /* Hero Section */
 .cert-hero {
-  padding: 4rem 0 2rem;
+  padding: 3rem 0 2rem;
   text-align: center;
 }
 
-.cert-hero__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 16px;
-  background: rgba(99, 102, 241, 0.08);
-  border: 1px solid rgba(99, 102, 241, 0.25);
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--p-600);
-  margin-bottom: 1.25rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.cert-hero__title {
-  font-size: 2.75rem;
-  font-weight: 700;
-  color: var(--p-950);
-  margin: 0 0 1rem;
-  line-height: 1.2;
-}
-
-.cert-hero__title span {
-  background: var(--main-gradient-color);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .cert-hero__desc {
@@ -237,9 +219,48 @@ body {
 /* Certificates Grid */
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
   margin-bottom: 5rem;
+}
+
+/* Desktop: 4 chứng chỉ chia đều 4 cột */
+@media (min-width: 1280px) {
+  .cert-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .cert-grid .cert-card__media {
+    height: 180px;
+  }
+
+  .cert-grid .cert-card__body {
+    padding: 1.25rem;
+  }
+
+  .cert-grid .cert-card__title {
+    font-size: 1.15rem;
+  }
+
+  .cert-grid .cert-card__desc {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .cert-grid .cert-card__skills {
+    margin-bottom: 1.25rem;
+  }
+
+  .cert-grid .cert-card__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cert-grid .cert-card__footer .btn-cert-primary,
+  .cert-grid .cert-card__footer .btn-cert-secondary {
+    width: 100%;
+  }
 }
 
 /* Certificate Card */
@@ -528,9 +549,6 @@ body {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  .cert-hero__title {
-    font-size: 2.2rem;
-  }
 }
 
 @media (max-width: 640px) {
@@ -538,10 +556,7 @@ body {
     padding: 0 1.25rem;
   }
   .cert-hero {
-    padding: 2.5rem 0 1.5rem;
-  }
-  .cert-hero__title {
-    font-size: 1.8rem;
+    padding: 2rem 0 1.5rem;
   }
   .cert-stats {
     gap: 1rem;
@@ -560,3 +575,224 @@ body {
     padding: 1.25rem;
   }
 }
+
+/* Navbar gọn hơn trên điện thoại */
+@media (max-width: 480px) {
+  .cert-nav__role {
+    display: none;
+  }
+  .cert-nav__name {
+    font-size: 1rem;
+  }
+  .btn-back-home {
+    padding: 10px 12px;
+  }
+  .btn-back-home span {
+    display: none;
+  }
+}
+
+/* ===================================================
+   Dark theme — đồng bộ với trang chủ
+   =================================================== */
+body {
+  background-color: var(--bg-base);
+  background-image: none;
+  color: var(--text-body);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(71, 185, 234, 0.09), transparent 42%),
+    radial-gradient(circle at 82% 68%, rgba(99, 102, 241, 0.1), transparent 45%),
+    linear-gradient(rgba(148, 197, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 197, 255, 0.045) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 64px 64px, 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, #000 45%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, #000 45%, transparent 100%);
+}
+
+::selection {
+  background: hsla(var(--p-500-code), 0.4);
+  color: #fff;
+}
+
+.cert-navbar {
+  background: rgba(7, 17, 36, 0.84);
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: 0 12px 34px rgba(2, 8, 23, 0.28);
+}
+
+.cert-nav__brand {
+  color: var(--text-strong);
+}
+
+.cert-nav__avatar {
+  border-color: var(--p-450);
+  box-shadow: 0 4px 16px -6px var(--glow-cyan);
+}
+
+.cert-nav__role {
+  color: var(--text-muted);
+}
+
+.btn-back-home {
+  background: var(--surface-soft);
+  color: #cfe3f8;
+  border-color: var(--border-strong);
+  box-shadow: none;
+}
+
+.btn-back-home:hover {
+  background: var(--main-gradient-color);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 10px 24px -14px var(--glow-cyan);
+}
+
+.cert-hero__desc {
+  color: var(--text-body);
+}
+
+.stat-item {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 18px 40px -30px rgba(2, 8, 23, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.stat-number {
+  background: linear-gradient(90deg, var(--p-450), var(--p-400));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.stat-label {
+  color: var(--text-muted);
+}
+
+.filter-btn {
+  background: var(--surface-soft);
+  border-color: var(--border-soft);
+  color: var(--text-body);
+  box-shadow: none;
+}
+
+.filter-btn:hover {
+  border-color: var(--border-strong);
+  color: #fff;
+}
+
+.filter-btn.active {
+  background: var(--main-gradient-color);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 8px 20px -12px var(--glow-indigo);
+}
+
+.cert-card {
+  background: var(--surface);
+  border-color: var(--border-soft);
+  box-shadow: 0 24px 50px -36px rgba(2, 8, 23, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.cert-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 28px 54px -26px rgba(2, 8, 23, 0.95), 0 0 36px -16px var(--glow-cyan);
+}
+
+.cert-card__media {
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom-color: var(--border-soft);
+}
+
+.cert-card__category {
+  color: var(--p-450);
+}
+
+.cert-card__title {
+  color: var(--text-strong);
+}
+
+.cert-card__issuer {
+  color: var(--text-muted);
+}
+
+.cert-card__desc {
+  color: var(--text-body);
+}
+
+.skill-tag {
+  background: var(--surface-soft);
+  color: #bccbdf;
+  border-color: var(--border-soft);
+}
+
+.cert-card__footer {
+  border-top-color: var(--border-soft);
+}
+
+.btn-cert-primary {
+  background: var(--main-gradient-color);
+  box-shadow: 0 8px 20px -12px var(--glow-indigo);
+}
+
+.btn-cert-primary:hover {
+  background: var(--main-gradient-color);
+  filter: brightness(1.08);
+  box-shadow: 0 12px 26px -12px var(--glow-cyan);
+}
+
+.btn-cert-secondary {
+  background: var(--surface-soft);
+  color: var(--text-body);
+  border-color: var(--border-soft);
+}
+
+.btn-cert-secondary:hover {
+  background: rgba(71, 185, 234, 0.1);
+  color: #fff;
+  border-color: var(--border-strong);
+}
+
+.cert-modal__container {
+  background: var(--surface-strong);
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 32px 70px -26px rgba(0, 0, 0, 0.8);
+}
+
+.cert-modal__header,
+.cert-modal__footer {
+  border-color: var(--border-soft);
+}
+
+.cert-modal__title {
+  color: var(--text-strong);
+}
+
+.cert-modal__close {
+  color: var(--text-muted);
+}
+
+.cert-modal__close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ff8b8b;
+}
+
+.cert-modal__body {
+  background: rgba(3, 9, 20, 0.9);
+}
+
+.cert-modal__footer {
+  background: var(--surface-strong);
+}
+
