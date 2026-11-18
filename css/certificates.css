@@ -361,57 +361,6 @@ body {
   min-height: calc(2em * 1.3);
 }
 
-.cert-card__issuer {
-  font-size: 0.9rem;
-  color: var(--n-500);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 0.85rem;
-  min-width: 0;
-}
-
-.cert-card__issuer svg {
-  flex-shrink: 0;
-}
-
-.cert-card__issuer span {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.cert-card__desc {
-  font-size: 0.95rem;
-  color: var(--n-600);
-  line-height: 1.6;
-  margin: 0 0 1rem;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  overflow: hidden;
-  min-height: calc(3em * 1.6);
-}
-
-.cert-card__skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 1.25rem;
-}
-
-.skill-tag {
-  font-size: 0.75rem;
-  padding: 3px 9px;
-  white-space: nowrap;
-  background: #f1f5f9;
-  color: #475569;
-  border-radius: 6px;
-  font-weight: 600;
-  border: 1px solid #e2e8f0;
-}
-
 .cert-card__footer {
   display: flex;
   gap: 10px;
@@ -607,8 +556,7 @@ body {
     padding: 1.25rem;
   }
   /* 1 cột: không cần giữ chiều cao cố định để thẳng hàng */
-  .cert-card__title,
-  .cert-card__desc {
+  .cert-card__title {
     min-height: 0;
   }
   .cert-modal {
@@ -776,20 +724,6 @@ body::before {
 
 .cert-card__title {
   color: var(--text-strong);
-}
-
-.cert-card__issuer {
-  color: var(--text-muted);
-}
-
-.cert-card__desc {
-  color: var(--text-body);
-}
-
-.skill-tag {
-  background: var(--surface-soft);
-  color: #bccbdf;
-  border-color: var(--border-soft);
 }
 
 .cert-card__footer {
