@@ -59,6 +59,26 @@ footer {
     transition: filter 0.2s;
 }
 
+.social-link__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.social-link__icon--github {
+    background: #f0f6fc;
+    color: #0d1117;
+}
+
+.social-link__icon svg {
+    width: 16px;
+    height: 16px;
+}
+
 .social-link:hover {
     color: #fff;
     border-color: var(--border-strong);

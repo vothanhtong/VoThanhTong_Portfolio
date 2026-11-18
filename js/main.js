@@ -42,6 +42,11 @@
     });
   }
 
+  /* =============== Zalo link (chống bot quét số) =============== */
+  document.querySelectorAll('a[data-zalo]').forEach((a) => {
+    a.href = 'https://zalo.me/' + a.dataset.zalo.split('').reverse().join('');
+  });
+
   /* =============== Anchor scrolling =============== */
   const getScrollTarget = (hash) => {
     if (!hash || !hash.startsWith('#') || hash.length < 2) return null;
