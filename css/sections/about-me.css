@@ -14,7 +14,7 @@
     }
 
     & img:nth-child(1) {
-        top: -20%;
+        top: -90px;
         left: 1%;
         z-index: -10;
         animation: float 6s ease-in-out infinite;
@@ -24,6 +24,19 @@
         bottom: -20%;
         right: 0;
         animation: float 7s 1s ease-in-out infinite;
+    }
+}
+
+/* Khi bấm "Giới thiệu": chừa chỗ cho navbar (72px) + phần tên lửa nhô lên
+   (90px + 20px lúc bay) để tên lửa không bị navbar che */
+#about {
+    scroll-margin-top: 230px;
+}
+
+@media (max-width: 768px) {
+    /* Màn hình nhỏ đã ẩn tên lửa → chỉ cần chừa chỗ cho navbar */
+    #about {
+        scroll-margin-top: 92px;
     }
 }
 
